@@ -228,6 +228,13 @@ dist-clean:
 	rm -rf $(DISTREL)/*
 
 # -------------------------------------------------------------------------
+# logs: view logs directly from the device
+# -------------------------------------------------------------------------
+.PHONY: logs
+logs:
+	@$(VIEW_DEVICE_LOGS)
+
+# -------------------------------------------------------------------------
 # CHECK_OPTIONS: this is used to specify configurable options, such
 # as which version of the BrightScript library sources should be used
 # to compile the app.
@@ -334,6 +341,13 @@ define CHECK_ROKU_DEV_TARGET
 		)
 
 	echo "Dev server is ready."
+endef
+
+# -------------------------------------------------------------------------
+# VIEW_DEVICE_LOGS is used to view logs directly from the device
+# -------------------------------------------------------------------------
+define VIEW_DEVICE_LOGS
+   telnet $(ROKU_DEV_TARGET) 8085
 endef
 
 # -------------------------------------------------------------------------
