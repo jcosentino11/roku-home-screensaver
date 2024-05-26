@@ -2,27 +2,20 @@ sub init()
     m.myLabel = m.top.findNode("myLabel")
     m.myLabel.font.size=92
     m.myLabel.color="0x72D7EEFF"
-    fetchTestResponse()
+    fetchHomeStatus()
     m.top.setFocus(true)
 end sub
 
-sub fetchTestResponse()
-    m.taskGetTest = createObject("roSGNode", "HttpGet")
-    m.taskGetTest.observeField("response", "onTestResponse")
-    m.taskGetTest.url = "https://192.168.0.20:1880/endpoint/test"
-    m.taskGetTest.unsafe = true
-    m.taskGetTest.control = "RUN"
+sub setMainTitle(text as string)
+    m.myLabel.text = text
 end sub
 
-sub onTestResponse()
-    resp = parseTestResponse(m.taskGetTest.response)
-    m.top.findNode("myLabel").text = resp.title
+sub fetchHomeStatus()
+    m.taskGetHomeStatus = createObject("roSGNode", "GetHomeStatus")
+    m.taskGetHomeStatus.observeField("homeStatus", "onHomeStatusResponse")
+    m.taskGetHomeStatus.control = "RUN"
 end sub
 
-function parseTestResponse(resp as string) as object        
-    json = ParseJson(resp)
-    if json = invalid
-        return {}
-    end if
-    return json
-end function
+sub onHomeStatusResponse()
+    setMainTitle(m.taskGetHomeStatus.homeStatus.title)
+end sub
