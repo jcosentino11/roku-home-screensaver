@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<component name="GetHomeStatus" extends="task"> 
-  <script type="text/brightscript" uri="pkg:/components/GetHomeStatus/GetHomeStatus.brs" />
-    <interface>
+<?xml version="1.0" encoding="utf-8"?>
+<component name="GetHomeStatus" extends="task">
+	<script type="text/brightscript" uri="pkg:/components/GetHomeStatus/GetHomeStatus.brs" />
+	<interface>
 		<!-- OUT -->
 		<field id="homeStatus" type="node" />
 	</interface>
