@@ -1,2 +1,3 @@
-# hello-world
-A basic sample channel application for Roku
+# Home App
+
+A home-aware channel that still needs a purpose.
