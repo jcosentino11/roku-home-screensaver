@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component name="WeatherBox" extends="Group">
+	<script type="text/brightscript" uri="pkg:/components/WeatherBox/WeatherBox.brs" />
+	<children>
+		<Label id="CurentTime"
+			text="12:55"
+			translation="[1370,810]"
+			horizAlign="right"
+			width="400"
+			height="200">
+			<Font role="font" uri="pkg:/fonts/coolvetica.otf" size="190" />
+		</Label>
+		<Label id="AmPm"
+			text="AM"
+			translation="[1780,935]"
+			width="600"
+			height="200">
+			<Font role="font" uri="pkg:/fonts/coolvetica.otf" size="60" />
+		</Label>
+	</children>
+</component>
