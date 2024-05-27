@@ -2,6 +2,17 @@
 <component name="BottomBar" extends="Group">
 	<script type="text/brightscript" uri="pkg:/components/BottomBar/BottomBar.brs" />
 	<children>
+		<!-- Security -->
+		<Poster
+			id="lockIcon"
+			translation="[100,880]"
+			uri="pkg:/images/icon-unlock.png" />
+		<Label id="armStatusLabel"
+			text="disarmed"
+			translation="[95,985]">
+			<Font role="font" uri="pkg:/fonts/coolvetica.otf" size="30" />
+		</Label>
+		<!-- Current Time -->
 		<Label id="currentTimeLabel"
 			text="00:00"
 			translation="[1270,810]"
@@ -17,6 +28,7 @@
 			height="200">
 			<Font role="font" uri="pkg:/fonts/coolvetica.otf" size="60" />
 		</Label>
+		<!-- Weather -->
 		<Label id="indoorTempLabel"
 			text="90°"
 			horizAlign="right"
@@ -53,6 +65,7 @@
 			id="weatherIcon"
 			translation="[1300,880]"
 			uri="pkg:/images/icon-sun.png" />
+		<!-- Title -->
 		<Label id="titleLabel"
 			text=""
 			horizAlign="right"
@@ -61,6 +74,7 @@
 			height="200">
 			<Font role="font" uri="pkg:/fonts/coolvetica.otf" size="35" />
 		</Label>
+		<!-- Utilities -->
 		<Timer
 			id="clockTimer"
 			repeat="true"
