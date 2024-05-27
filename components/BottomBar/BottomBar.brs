@@ -2,7 +2,25 @@ sub init()
     m.currentTimeLabel = m.top.findNode("currentTimeLabel")
     m.amPmLabel = m.top.findNode("amPmLabel")
     m.titleLabel = m.top.findNode("titleLabel")
+    m.weatherIcon = m.top.findNode("weatherIcon")
     m.clockTimer = m.top.findNode("clockTimer")
+
+    m.weatherStates = createObject("roAssociativeArray")
+    m.weatherStates.AddReplace("clear-night", "pkg:/images/icon-moon.png")    
+    m.weatherStates.AddReplace("cloudy", "pkg:/images/icon-cloudy.png")   
+    m.weatherStates.AddReplace("fog", "pkg:/images/icon-cloudy.png")   
+    m.weatherStates.AddReplace("hail", "pkg:/images/icon-snow.png")   
+    m.weatherStates.AddReplace("lightning", "pkg:/images/icon-lightning.png")   
+    m.weatherStates.AddReplace("lightning-rainy", "pkg:/images/icon-lightning.png")   
+    m.weatherStates.AddReplace("partlycloudy", "pkg:/images/icon-cloudy.png")   
+    m.weatherStates.AddReplace("pouring", "pkg:/images/icon-rain.png")   
+    m.weatherStates.AddReplace("rainy", "pkg:/images/icon-rain.png") 
+    m.weatherStates.AddReplace("snowy", "pkg:/images/icon-snow.png") 
+    m.weatherStates.AddReplace("snowy-rainy", "pkg:/images/icon-snow.png") 
+    m.weatherStates.AddReplace("sunny", "pkg:/images/icon-sun.png") 
+    m.weatherStates.AddReplace("windy", "pkg:/images/icon-cloudy.png") 
+    m.weatherStates.AddReplace("windy-variant", "pkg:/images/icon-cloudy.png") 
+    m.weatherStates.AddReplace("exceptional", "pkg:/images/icon-sun.png")   
 
     fetchHomeStatus()
     
@@ -24,4 +42,5 @@ sub onHomeStatusResponse()
     m.currentTimeLabel.text = m.taskGetHomeStatus.homeStatus.timeStr
     m.amPmLabel.text = m.taskGetHomeStatus.homeStatus.amPmStr
     m.titleLabel.text = m.taskGetHomeStatus.homeStatus.name
+    m.weatherIcon.uri = m.weatherStates[m.taskGetHomeStatus.homeStatus.currentConditions]
 end sub
