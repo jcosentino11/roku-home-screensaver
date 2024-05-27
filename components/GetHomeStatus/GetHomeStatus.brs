@@ -28,7 +28,6 @@ function PlaceholderHomeStatus() as object
     node.armStatus = "unknown"
     node.indoorTemp = 0.0
     node.outdoorTemp = 0.0
-    node.currentCity = "unknown"
     node.currentConditions = "unknown"
     return node
 end function
@@ -42,7 +41,6 @@ function ParseHomeStatus(homeStatusJson as object) as object
     node.armStatus = homeStatusJson.armStatus
     node.indoorTemp = homeStatusJson.indoorTemp
     node.outdoorTemp = homeStatusJson.outdoorTemp
-    node.currentCity = homeStatusJson.currentCity
     node.currentConditions = homeStatusJson.currentConditions
     return node
 end function

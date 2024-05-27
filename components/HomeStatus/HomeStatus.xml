@@ -7,7 +7,6 @@
 		<field id="armStatus" type="string" />
 		<field id="indoorTemp" type="float" />
 		<field id="outdoorTemp" type="float" />
-		<field id="currentCity" type="string" />
 		<field id="currentConditions" type="string" />
 	</interface>
 </component>
