@@ -8,6 +8,8 @@ sub init()
     m.lockIcon = m.top.findNode("lockIcon")
     m.armStatusLabel = m.top.findNode("armStatusLabel")
     m.clockTimer = m.top.findNode("clockTimer")
+    m.indoorTempLabelText = m.top.findNode("indoorTempLabelText")
+    m.outsideTempLabelText = m.top.findNode("outsideTempLabelText")
 
     m.weatherStates = createObject("roAssociativeArray")
     m.weatherStates.AddReplace("clear-night", "pkg:/images/icon-moon.png")    
@@ -52,8 +54,12 @@ sub onHomeStatusResponse()
     m.amPmLabel.text = m.taskGetHomeStatus.homeStatus.amPmStr
     m.titleLabel.text = m.taskGetHomeStatus.homeStatus.name
     m.weatherIcon.uri = m.weatherStates[m.taskGetHomeStatus.homeStatus.currentConditions]
+    m.weatherIcon.visible = true
     m.indoorTempLabel.text = Str(m.taskGetHomeStatus.homeStatus.indoorTemp) + "°"
     m.outsideTempLabel.text = Str(m.taskGetHomeStatus.homeStatus.outdoorTemp) + "°"
     m.armStatusLabel.text = m.taskGetHomeStatus.homeStatus.armStatus
     m.lockIcon.uri = m.lockStates[m.taskGetHomeStatus.homeStatus.armStatus]
+    m.lockIcon.visible = true
+    m.indoorTempLabelText.text = "in"
+    m.outsideTempLabelText.text = "out"
 end sub
