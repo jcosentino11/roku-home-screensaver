@@ -1,6 +1,4 @@
 sub init()
-    fetchHomeStatus()
-
     m.poster = m.top.findNode("poster")
     m.imageUrls = [
         "pkg:/images/pig-1.jpg",
@@ -18,16 +16,6 @@ sub init()
     m.switchTimer.ObserveField("fire", "onSwitchTimerFire")
 
     m.top.setFocus(true)
-end sub
-
-sub fetchHomeStatus()
-    m.taskGetHomeStatus = createObject("roSGNode", "GetHomeStatus")
-    m.taskGetHomeStatus.observeField("homeStatus", "onHomeStatusResponse")
-    m.taskGetHomeStatus.control = "RUN"
-end sub
-
-sub onHomeStatusResponse()
-    print m.taskGetHomeStatus.homeStatus.title
 end sub
 
 sub showNextImage()
