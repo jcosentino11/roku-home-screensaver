@@ -21,14 +21,29 @@ function DoGetHomeStatus() as object
 end function
 
 function PlaceholderHomeStatus() as object
-    node = CreateObject("roSGNode", "ContentNode")
-    node.title = "unknown"
+    node = CreateObject("roSGNode", "HomeStatus")
+    node.name = "unknown"
+    node.timeStr = "00:00"
+    node.amPmStr = "AM"
+    node.armStatus = "unknown"
+    node.indoorTemp = 0.0
+    node.outdoorTemp = 0.0
+    node.currentCity = "unknown"
+    node.currentConditions = "unknown"
     return node
 end function
 
 function ParseHomeStatus(homeStatusJson as object) as object
-    node = CreateObject("roSGNode", "ContentNode")
-    node.title = homeStatusJson.title
+    print homeStatusJson
+    node = CreateObject("roSGNode", "HomeStatus")
+    node.name = homeStatusJson.name
+    node.timeStr = homeStatusJson.timeStr
+    node.amPmStr = homeStatusJson.amPmStr
+    node.armStatus = homeStatusJson.armStatus
+    node.indoorTemp = homeStatusJson.indoorTemp
+    node.outdoorTemp = homeStatusJson.outdoorTemp
+    node.currentCity = homeStatusJson.currentCity
+    node.currentConditions = homeStatusJson.currentConditions
     return node
 end function
 

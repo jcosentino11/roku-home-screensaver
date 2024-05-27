@@ -10,5 +10,5 @@ sub fetchHomeStatus()
 end sub
 
 sub onHomeStatusResponse()
-    m.homeStatusTitleLabel.text = m.taskGetHomeStatus.homeStatus.title
+    m.homeStatusTitleLabel.text = m.taskGetHomeStatus.homeStatus.name
 end sub
