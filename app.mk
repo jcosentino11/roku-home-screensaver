@@ -345,9 +345,11 @@ endef
 
 # -------------------------------------------------------------------------
 # VIEW_DEVICE_LOGS is used to view logs directly from the device
+#        8085 for channels
+#        8087 for screensavers
 # -------------------------------------------------------------------------
 define VIEW_DEVICE_LOGS
-   telnet $(ROKU_DEV_TARGET) 8085
+   telnet $(ROKU_DEV_TARGET) 8087
 endef
 
 # -------------------------------------------------------------------------
