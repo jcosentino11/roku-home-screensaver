@@ -1,8 +1,10 @@
-##   Channel Details
 title=Home
+screensaver_title=Home
 major_version=1
 minor_version=0
 build_version=00001
+
+ui_resolutions=fhd
 
 ##   Channel Assets
 ###  Main Menu Icons / Channel Poster Artwork 
@@ -14,6 +16,3 @@ mm_icon_focus_sd=pkg:/images/pig-poster-sd.jpg
 ###  Splash Screen + Loading Screen Artwork 
 #### Image sizes are FHD: 1920x1080px | HD: 1280x720px | SD: 720x480px
 splash_screen_fhd=pkg:/images/pig-splash-fhd.jpg
-
-splash_color=#000000
-splash_min_time=1
