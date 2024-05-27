@@ -2,12 +2,12 @@
 <component name="SlideShow" extends="Group">
 	<script type="text/brightscript" uri="pkg:/components/SlideShow/SlideShow.brs" />
 	<children>
-		<Poster 
+		<Poster
 			id="poster"
 			uri="pkg:/images/pig-6.jpg"
 			width="2000"
 			height="1080" />
-		<Poster 
+		<Poster
 			id="staging"
 			width="2000"
 			height="1080"
@@ -19,14 +19,14 @@
 			color="0x0a0a0a"
 			opacity="0.2" />
 		<Timer
-            id="switchTimer"
-            duration="10" />
+			id="switchTimer"
+			duration="10" />
 		<Timer
-            id="waitToLoadTimer"
-            duration="5" />
+			id="waitToLoadTimer"
+			duration="5" />
 		<Timer
-            id="nextThemeTimer"
+			id="nextThemeTimer"
 			repeat="true"
-            duration="60" />
+			duration="60" />
 	</children>
 </component>
