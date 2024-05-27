@@ -12,11 +12,21 @@
 			width="2000"
 			height="1080"
 			visible="false" />
+		<Rectangle id="bottomGradient"
+			translation="[0,810]"
+			width="2000"
+			height="300"
+			color="0x0a0a0a"
+			opacity="0.2" />
 		<Timer
             id="switchTimer"
             duration="10" />
 		<Timer
             id="waitToLoadTimer"
             duration="5" />
+		<Timer
+            id="nextThemeTimer"
+			repeat="true"
+            duration="60" />
 	</children>
 </component>

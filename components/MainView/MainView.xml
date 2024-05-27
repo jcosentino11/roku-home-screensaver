@@ -3,12 +3,6 @@
 	<script type="text/brightscript" uri="pkg:/components/MainView/MainView.brs" />
 	<children>
 		<SlideShow id="SlideShow" />
-		<Rectangle id="bottomGradient"
-			translation="[0,810]"
-			width="2000"
-			height="300"
-			color="0x0a0a0a"
-			opacity="0.2" />
 		<BottomBar id="BottomBar" />
 	</children>
 </component>

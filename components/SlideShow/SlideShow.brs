@@ -3,6 +3,11 @@ sub init()
     m.poster = m.top.findNode("poster")
     m.staging = m.top.findNode("staging")
     m.currentImageIndex = 0
+    m.newThemeRequested = false
+
+    m.nextThemeTimer = m.top.findNode("nextThemeTimer")
+    m.nextThemeTimer.ObserveField("fire", "onNextThemeRequested")
+    m.nextThemeTimer.control = "start"
 
     m.waitToLoadTimer = m.top.findNode("waitToLoadTimer")
     m.waitToLoadTimer.ObserveField("fire", "onWaitToLoadFinished")
@@ -14,6 +19,10 @@ sub init()
     m.top.setFocus(true)
 end sub
 
+sub onNextThemeRequested()
+    m.newThemeRequested = true
+endsub
+
 sub fetchWallpapers()
     m.taskGetWallpapers = createObject("roSGNode", "GetWallpapers")
     m.taskGetWallpapers.observeField("wallpapers", "onWallpapersResponse")
@@ -21,11 +30,18 @@ sub fetchWallpapers()
 end sub
 
 sub onWallpapersResponse()
+    m.currentImageIndex = 0
     m.imageUrls = m.taskGetWallpapers.wallpapers
     showNextImage()
 end sub
 
 sub showNextImage()
+    if m.newThemeRequested
+        m.newThemeRequested = false
+        fetchWallpapers()
+        return
+    end if
+
     if m.showStaging
         m.staging.uri = m.imageUrls[m.currentImageIndex]
     else
