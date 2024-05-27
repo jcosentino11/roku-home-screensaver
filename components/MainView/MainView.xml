@@ -2,8 +2,14 @@
 <component name="MainView" extends="Scene">
 	<script type="text/brightscript" uri="pkg:/components/MainView/MainView.brs" />
 	<children>
-		<!-- <SlideShow id="SlideShow" /> -->
-		<!-- <HomeStatusBox id="HomeStatusBox" /> -->
+		<SlideShow id="SlideShow" />
+		<Rectangle id="bottomGradient"
+			translation="[0,810]"
+			width="2000"
+			height="300"
+			color="0x0a0a0a"
+			opacity="0.2" />
+		<HomeStatusBox id="HomeStatusBox" />
 		<WeatherBox id="WeatherBox" />
 	</children>
 </component>
