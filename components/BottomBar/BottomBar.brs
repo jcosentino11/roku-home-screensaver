@@ -27,8 +27,8 @@ sub init()
     m.weatherStates.AddReplace("exceptional", "pkg:/images/icon-sun.png")   
 
     m.lockStates = createObject("roAssociativeArray")
-    m.lockStates.AddReplace("armed home", "pkg:/images/icon-lock.png") 
-    m.lockStates.AddReplace("armed away", "pkg:/images/icon-lock.png") 
+    m.lockStates.AddReplace("armed_home", "pkg:/images/icon-lock.png") 
+    m.lockStates.AddReplace("armed_away", "pkg:/images/icon-lock.png") 
     m.lockStates.AddReplace("disarmed", "pkg:/images/icon-unlock.png") 
 
     fetchHomeStatus()
