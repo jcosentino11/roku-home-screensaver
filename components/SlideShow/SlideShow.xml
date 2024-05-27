@@ -7,6 +7,6 @@
 		<Timer
             id="switchTimer"
             repeat="true"
-            duration="5" />
+            duration="10" />
 	</children>
 </component>
