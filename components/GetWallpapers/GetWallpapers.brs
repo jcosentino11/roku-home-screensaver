@@ -3,7 +3,7 @@ sub init()
 end sub
 
 sub GetWallpapers()
-    m.top.wallpapers = PlaceholderWallpapers()
+    m.top.wallpapers = DoGetWallpapers()
 end sub
 
 function DoGetWallpapers() as object

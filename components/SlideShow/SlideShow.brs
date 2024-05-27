@@ -1,5 +1,5 @@
 sub init()
-    m.showStaging = false
+    m.showStaging = true
     m.poster = m.top.findNode("poster")
     m.staging = m.top.findNode("staging")
     m.currentImageIndex = 0
