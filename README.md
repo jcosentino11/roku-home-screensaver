@@ -4,7 +4,7 @@ A Roku Screensaver that's tailor-made for my "smart" home
 
 ![Screensaver](https://github.com/jcosentino11/roku-home-app/blob/main/images/example.jpg?raw=true)
 
-# Local Web API
+## Local Web API
 
 I used NodeRED to serve the following API:
 
