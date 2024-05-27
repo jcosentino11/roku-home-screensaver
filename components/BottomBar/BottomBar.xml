@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<component name="WeatherBox" extends="Group">
-	<script type="text/brightscript" uri="pkg:/components/WeatherBox/WeatherBox.brs" />
+<component name="BottomBar" extends="Group">
+	<script type="text/brightscript" uri="pkg:/components/BottomBar/BottomBar.brs" />
 	<children>
 		<Label id="currentTimeLabel"
 			text="00:00"
@@ -51,8 +51,16 @@
 		</Label>
 		<Poster
 			id="weatherIcon"
-			translation="[1320,880]"
+			translation="[1300,880]"
 			uri="pkg:/images/icon-sun.png" />
+		<Label id="titleLabel"
+			text=""
+			horizAlign="right"
+			translation="[1360,1010]"
+			width="500"
+			height="200">
+			<Font role="font" uri="pkg:/fonts/coolvetica.otf" size="35" />
+		</Label>
 		<Timer
 			id="clockTimer"
 			repeat="true"

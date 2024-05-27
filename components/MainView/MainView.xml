@@ -9,7 +9,6 @@
 			height="300"
 			color="0x0a0a0a"
 			opacity="0.2" />
-		<HomeStatusBox id="HomeStatusBox" />
-		<WeatherBox id="WeatherBox" />
+		<BottomBar id="BottomBar" />
 	</children>
 </component>
