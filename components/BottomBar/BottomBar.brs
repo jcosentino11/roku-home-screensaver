@@ -3,6 +3,8 @@ sub init()
     m.amPmLabel = m.top.findNode("amPmLabel")
     m.titleLabel = m.top.findNode("titleLabel")
     m.weatherIcon = m.top.findNode("weatherIcon")
+    m.indoorTempLabel = m.top.findNode("indoorTempLabel")
+    m.outsideTempLabel = m.top.findNode("outsideTempLabel")
     m.lockIcon = m.top.findNode("lockIcon")
     m.armStatusLabel = m.top.findNode("armStatusLabel")
     m.clockTimer = m.top.findNode("clockTimer")
@@ -50,6 +52,8 @@ sub onHomeStatusResponse()
     m.amPmLabel.text = m.taskGetHomeStatus.homeStatus.amPmStr
     m.titleLabel.text = m.taskGetHomeStatus.homeStatus.name
     m.weatherIcon.uri = m.weatherStates[m.taskGetHomeStatus.homeStatus.currentConditions]
+    m.indoorTempLabel.text = Str(m.taskGetHomeStatus.homeStatus.indoorTemp) + "°"
+    m.outsideTempLabel.text = Str(m.taskGetHomeStatus.homeStatus.outdoorTemp) + "°"
     m.armStatusLabel.text = m.taskGetHomeStatus.homeStatus.armStatus
     m.lockIcon.uri = m.lockStates[m.taskGetHomeStatus.homeStatus.armStatus]
 end sub
