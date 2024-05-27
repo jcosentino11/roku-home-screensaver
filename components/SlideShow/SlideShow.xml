@@ -3,10 +3,20 @@
 	<script type="text/brightscript" uri="pkg:/components/SlideShow/SlideShow.brs" />
 	<children>
 		<Poster 
-			id="poster" />
+			id="poster"
+			uri="pkg:/images/pig-6.jpg"
+			width="2000"
+			height="1080" />
+		<Poster 
+			id="staging"
+			width="2000"
+			height="1080"
+			visible="false" />
 		<Timer
             id="switchTimer"
-            repeat="true"
             duration="10" />
+		<Timer
+            id="waitToLoadTimer"
+            duration="5" />
 	</children>
 </component>

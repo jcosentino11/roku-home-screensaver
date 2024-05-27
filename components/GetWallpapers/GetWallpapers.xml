@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component name="GetWallpapers" extends="task">
+	<script type="text/brightscript" uri="pkg:/components/GetWallpapers/GetWallpapers.brs" />
+	<interface>
+		<!-- OUT -->
+		<field id="wallpapers" type="stringarray" />
+	</interface>
+</component>
