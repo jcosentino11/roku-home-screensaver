@@ -2,12 +2,11 @@
 <component name="HelloWorld" extends="Scene">
 	<script type="text/brightscript" uri="pkg:/components/HelloWorld/HelloWorld.brs" />
 	<children>
-		<Label id="myLabel"
-			text="Hello World!"
-			width="1280"
-			height="720"
-			horizAlign="center"
-			vertAlign="center"
-		/>
+		<Poster 
+			id="poster" />
+		<Timer
+            id="switchTimer"
+            repeat="true"
+            duration="5" />
 	</children>
 </component>

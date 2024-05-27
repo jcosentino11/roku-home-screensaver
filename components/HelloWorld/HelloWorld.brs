@@ -1,13 +1,23 @@
 sub init()
-    m.myLabel = m.top.findNode("myLabel")
-    m.myLabel.font.size=92
-    m.myLabel.color="0x72D7EEFF"
     fetchHomeStatus()
-    m.top.setFocus(true)
-end sub
 
-sub setMainTitle(text as string)
-    m.myLabel.text = text
+    m.poster = m.top.findNode("poster")
+    m.imageUrls = [
+        "pkg:/images/pig-1.jpg",
+        "pkg:/images/pig-2.jpg",
+        "pkg:/images/pig-3.jpg",
+        "pkg:/images/pig-4.jpg",
+        "pkg:/images/pig-5.jpg",
+        "pkg:/images/pig-6.jpg"
+    ]
+    m.currentImageIndex = 0
+    showNextImage()
+
+    m.switchTimer = m.top.findNode("switchTimer")
+    m.switchTimer.control = "start"
+    m.switchTimer.ObserveField("fire", "onSwitchTimerFire")
+
+    m.top.setFocus(true)
 end sub
 
 sub fetchHomeStatus()
@@ -17,5 +27,14 @@ sub fetchHomeStatus()
 end sub
 
 sub onHomeStatusResponse()
-    setMainTitle(m.taskGetHomeStatus.homeStatus.title)
+    print m.taskGetHomeStatus.homeStatus.title
+end sub
+
+sub showNextImage()
+    m.poster.uri = m.imageUrls[m.currentImageIndex]
+    m.currentImageIndex = (m.currentImageIndex + 1) mod m.imageUrls.count()
+end sub
+
+sub onSwitchTimerFire()
+    showNextImage()
 end sub
