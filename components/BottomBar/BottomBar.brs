@@ -3,6 +3,8 @@ sub init()
     m.amPmLabel = m.top.findNode("amPmLabel")
     m.titleLabel = m.top.findNode("titleLabel")
     m.weatherIcon = m.top.findNode("weatherIcon")
+    m.lockIcon = m.top.findNode("lockIcon")
+    m.armStatusLabel = m.top.findNode("armStatusLabel")
     m.clockTimer = m.top.findNode("clockTimer")
 
     m.weatherStates = createObject("roAssociativeArray")
@@ -21,6 +23,11 @@ sub init()
     m.weatherStates.AddReplace("windy", "pkg:/images/icon-cloudy.png") 
     m.weatherStates.AddReplace("windy-variant", "pkg:/images/icon-cloudy.png") 
     m.weatherStates.AddReplace("exceptional", "pkg:/images/icon-sun.png")   
+
+    m.lockStates = createObject("roAssociativeArray")
+    m.lockStates.AddReplace("armed home", "pkg:/images/icon-lock.png") 
+    m.lockStates.AddReplace("armed away", "pkg:/images/icon-lock.png") 
+    m.lockStates.AddReplace("disarmed", "pkg:/images/icon-unlock.png") 
 
     fetchHomeStatus()
     
@@ -43,4 +50,6 @@ sub onHomeStatusResponse()
     m.amPmLabel.text = m.taskGetHomeStatus.homeStatus.amPmStr
     m.titleLabel.text = m.taskGetHomeStatus.homeStatus.name
     m.weatherIcon.uri = m.weatherStates[m.taskGetHomeStatus.homeStatus.currentConditions]
+    m.armStatusLabel.text = m.taskGetHomeStatus.homeStatus.armStatus
+    m.lockIcon.uri = m.lockStates[m.taskGetHomeStatus.homeStatus.armStatus]
 end sub
