@@ -9,5 +9,6 @@
 		<field id="outdoorTemp" type="float" />
 		<field id="currentConditions" type="string" />
 		<field id="notificationText" type="string" />
+		<field id="cameraImage" type="string" />
 	</interface>
 </component>

@@ -12,6 +12,7 @@ sub init()
     m.outsideTempLabelText = m.top.findNode("outsideTempLabelText")
     m.notificationLabel = m.top.findNode("notificationLabel")
     m.infoIcon = m.top.findNode("infoIcon")
+    m.cameraView = m.top.findNode("cameraView")
 
     m.weatherStates = createObject("roAssociativeArray")
     m.weatherStates.AddReplace("clear-night", "pkg:/images/icon-moon.png")    
@@ -65,5 +66,10 @@ sub onHomeStatusResponse()
     m.indoorTempLabelText.text = "in"
     m.outsideTempLabelText.text = "out"
     m.notificationLabel.text = m.taskGetHomeStatus.homeStatus.notificationText
-    m.infoIcon.visible = m.taskGetHomeStatus.homeStatus.notificationText <> ""
+    m.cameraView.uri = m.taskGetHomeStatus.homeStatus.cameraImage
+    
+    ' don't display notifications if we're showing the camera
+    if m.taskGetHomeStatus.homeStatus.cameraImage <> ""
+        m.notificationLabel.text = ""
+    end if
 end sub

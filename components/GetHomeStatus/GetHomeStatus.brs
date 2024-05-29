@@ -30,11 +30,11 @@ function PlaceholderHomeStatus() as object
     node.outdoorTemp = 0.0
     node.currentConditions = "unknown"
     node.notificationText = ""
+    node.cameraImage = ""
     return node
 end function
 
 function ParseHomeStatus(homeStatusJson as object) as object
-    print homeStatusJson
     node = CreateObject("roSGNode", "HomeStatus")
     node.name = homeStatusJson.name
     node.timeStr = homeStatusJson.timeStr
@@ -44,6 +44,11 @@ function ParseHomeStatus(homeStatusJson as object) as object
     node.outdoorTemp = homeStatusJson.outdoorTemp
     node.currentConditions = homeStatusJson.currentConditions
     node.notificationText = homeStatusJson.notificationText
+    node.cameraImage = homeStatusJson.cameraImage
+    if node.cameraImage <> ""
+        node.cameraImage = node.cameraImage.replace("&#x2F;", "/")
+        node.cameraImage = node.cameraImage.replace("&#x3D;", "=")
+    end if
     return node
 end function
 
