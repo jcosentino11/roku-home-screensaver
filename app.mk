@@ -405,6 +405,12 @@ install: $(APPNAME) check
 
 	@MSG=`$(GET_PLUGIN_PAGE_RESULT_STATUS)`; \
 	echo "Result: $$MSG"
+	@$(PRESS_ENTER)
+
+# save a click during development loop
+define PRESS_ENTER
+	curl -d '' http://$(ROKU_DEV_TARGET):8060/keypress/select
+endef	
 
 # -------------------------------------------------------------------------
 # remove: uninstall the dev channel from the Roku target device.

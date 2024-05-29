@@ -29,6 +29,7 @@ function PlaceholderHomeStatus() as object
     node.indoorTemp = 0.0
     node.outdoorTemp = 0.0
     node.currentConditions = "unknown"
+    node.notificationText = ""
     return node
 end function
 
@@ -42,6 +43,7 @@ function ParseHomeStatus(homeStatusJson as object) as object
     node.indoorTemp = homeStatusJson.indoorTemp
     node.outdoorTemp = homeStatusJson.outdoorTemp
     node.currentConditions = homeStatusJson.currentConditions
+    node.notificationText = homeStatusJson.notificationText
     return node
 end function
 

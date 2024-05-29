@@ -78,6 +78,21 @@
 			height="200">
 			<Font role="font" uri="pkg:/fonts/coolvetica.otf" size="35" />
 		</Label>
+		<!-- Notification -->
+		<Poster
+			id="infoIcon"
+			width="40"
+			height="40"
+			visible="false"
+			translation="[300,985]"
+			uri="pkg:/images/icon-info.png" />
+		<Label id="notificationLabel"
+			text=""
+			width="600"
+			horizAlign="left"
+			translation="[350,985]">
+			<Font role="font" uri="pkg:/fonts/coolvetica.otf" size="30" />
+		</Label>
 		<!-- Utilities -->
 		<Timer
 			id="clockTimer"

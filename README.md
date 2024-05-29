@@ -19,7 +19,8 @@ Get some basic data from HomeAssistant to display in the screensaver.
     "armStatus": "disarmed",
     "indoorTemp": "71",
     "outdoorTemp": "65",
-    "currentConditions": "cloudy"
+    "currentConditions": "cloudy",
+    "notificationText": "Camera battery needs charging!"
 }
 ```
 

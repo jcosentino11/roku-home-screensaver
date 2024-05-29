@@ -10,6 +10,8 @@ sub init()
     m.clockTimer = m.top.findNode("clockTimer")
     m.indoorTempLabelText = m.top.findNode("indoorTempLabelText")
     m.outsideTempLabelText = m.top.findNode("outsideTempLabelText")
+    m.notificationLabel = m.top.findNode("notificationLabel")
+    m.infoIcon = m.top.findNode("infoIcon")
 
     m.weatherStates = createObject("roAssociativeArray")
     m.weatherStates.AddReplace("clear-night", "pkg:/images/icon-moon.png")    
@@ -62,4 +64,6 @@ sub onHomeStatusResponse()
     m.lockIcon.visible = true
     m.indoorTempLabelText.text = "in"
     m.outsideTempLabelText.text = "out"
+    m.notificationLabel.text = m.taskGetHomeStatus.homeStatus.notificationText
+    m.infoIcon.visible = m.taskGetHomeStatus.homeStatus.notificationText <> ""
 end sub

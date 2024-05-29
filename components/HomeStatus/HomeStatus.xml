@@ -8,5 +8,6 @@
 		<field id="indoorTemp" type="float" />
 		<field id="outdoorTemp" type="float" />
 		<field id="currentConditions" type="string" />
+		<field id="notificationText" type="string" />
 	</interface>
 </component>
