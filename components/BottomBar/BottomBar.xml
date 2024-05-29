@@ -103,6 +103,6 @@
 		<Timer
 			id="clockTimer"
 			repeat="true"
-			duration="3" />
+			duration="5" />
 	</children>
 </component>
